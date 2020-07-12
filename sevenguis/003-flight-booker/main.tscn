@@ -1,0 +1,73 @@
+[gd_scene load_steps=3 format=2]
+
+[ext_resource path="res://MenuButton.gd" type="Script" id=1]
+[ext_resource path="res://main.gd" type="Script" id=2]
+
+[node name="main" type="Node2D"]
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_horizontal_guides_": [ 10.0 ]
+}
+
+[node name="MenuButton" type="MenuButton" parent="."]
+margin_left = 14.2705
+margin_top = 10.0
+margin_right = 116.27
+margin_bottom = 30.0
+text = "one-way flight"
+flat = false
+script = ExtResource( 1 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="PopupMenu2" type="PopupMenu" parent="MenuButton"]
+margin_right = 20.0
+margin_bottom = 20.0
+
+[node name="text1" type="LineEdit" parent="."]
+margin_left = 14.0
+margin_top = 40.0
+margin_right = 116.0
+margin_bottom = 64.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="text2" type="LineEdit" parent="."]
+margin_left = 14.2705
+margin_top = 75.6762
+margin_right = 116.27
+margin_bottom = 99.6762
+editable = false
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="button" type="Button" parent="."]
+margin_left = 14.0
+margin_top = 108.0
+margin_right = 116.0
+margin_bottom = 128.0
+disabled = true
+text = "Book"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="WindowDialog" type="WindowDialog" parent="."]
+visible = true
+margin_left = 200.0
+margin_top = 49.0
+margin_right = 322.0
+margin_bottom = 146.0
+
+[node name="Label" type="Label" parent="WindowDialog"]
+margin_left = 6.07141
+margin_top = 15.0
+margin_right = 118.071
+margin_bottom = 29.0
+autowrap = true
+[connection signal="text_changed" from="text1" to="." method="_on_text1_text_changed"]
+[connection signal="text_changed" from="text2" to="." method="_on_text2_text_changed"]
+[connection signal="pressed" from="button" to="." method="_on_button_pressed"]

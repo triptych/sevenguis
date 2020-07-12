@@ -1,0 +1,46 @@
+[gd_scene load_steps=2 format=2]
+
+[ext_resource path="res://main.gd" type="Script" id=1]
+
+[node name="main" type="Node2D"]
+script = ExtResource( 1 )
+
+[node name="edit-celcius" type="LineEdit" parent="."]
+margin_left = 16.0
+margin_top = 20.0
+margin_right = 74.0
+margin_bottom = 44.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="edit-fahrenheit" type="LineEdit" parent="."]
+margin_left = 164.0
+margin_top = 19.0
+margin_right = 222.0
+margin_bottom = 43.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label-celcius" type="Label" parent="."]
+margin_left = 85.0
+margin_top = 24.0
+margin_right = 125.0
+margin_bottom = 38.0
+text = "Celcius = "
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="label-fahrenheit" type="Label" parent="."]
+margin_left = 236.0
+margin_top = 23.0
+margin_right = 276.0
+margin_bottom = 37.0
+text = "Fahrenheit"
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="text_changed" from="edit-celcius" to="." method="_on_editcelcius_text_changed"]
+[connection signal="text_changed" from="edit-fahrenheit" to="." method="_on_editfahrenheit_text_changed"]
